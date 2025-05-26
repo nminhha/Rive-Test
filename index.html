@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird Test</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="700" height="400"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "https://res.cloudinary.com/dh5mngou0/raw/upload/flappy_bird_jeco85.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        // artboard: "Control", // Optional. If not supplied the default is selected
+        stateMachines: "Control",
+        onLoad: () => {
+          // Ensure the drawing surface matches the canvas size and device pixel ratio
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+  </body>
+</html>
